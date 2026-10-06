@@ -1,0 +1,225 @@
+===== SAMPLE 1 (input) =====
+ATLAS LOGISTICS
+Facture
+
+Date - 05.09.2024
+Date d'échéance - 05.10.2024
+Numéro de facture - INV/09/2024/7228
+
+Description                 Quantité            P.U.     Total ligne
+Hébergement Cloud               3      334,08 EUR    1 002,24 EUR
+Assistance technique            1      208,85 EUR      208,85 EUR
+
+Montant HT - 1.211,09 EUR
+TVA - 242,22 EUR
+Net à payer - 1.453,31 EUR
+
+===== SAMPLE 1 (target) =====
+{
+  "invoice_number": "INV/09/2024/7228",
+  "vendor": "Atlas Logistics",
+  "invoice_date": "2024-09-05",
+  "due_date": "2024-10-05",
+  "currency": "EUR",
+  "items": [
+    {
+      "description": "Hébergement Cloud",
+      "quantity": 3,
+      "unit_price": 334.08,
+      "total": 1002.24
+    },
+    {
+      "description": "Assistance technique",
+      "quantity": 1,
+      "unit_price": 208.85,
+      "total": 208.85
+    }
+  ],
+  "subtotal": 1211.09,
+  "tax": 242.22,
+  "total": 1453.31
+}
+
+===== SAMPLE 2 (input) =====
+Cedar Services Co.
+7 Boulevard Zerktouni, Lyon
+
+Invoice # : F2025/3056
+Customer : Studio Pixel SARL
+Date : 06/12/2025
+Due Date : 21/12/2025
+
+Description                 Quantity            Rate          Amount
+Delivery Fee                    3         $196.00         $588.00
+Email Marketing Campaign        2          $43.84          $87.68
+Translation Service             1       $1,898.30       $1,898.30
+
+Sub Total : $2,573.98
+Tax : $180.18
+Amount Due : $2,754.16
+
+===== SAMPLE 2 (target) =====
+{
+  "invoice_number": "F2025/3056",
+  "vendor": "Cedar Services Co.",
+  "invoice_date": "2025-12-06",
+  "due_date": "2025-12-21",
+  "currency": "USD",
+  "items": [
+    {
+      "description": "Delivery Fee",
+      "quantity": 3,
+      "unit_price": 196.0,
+      "total": 588.0
+    },
+    {
+      "description": "Email Marketing Campaign",
+      "quantity": 2,
+      "unit_price": 43.84,
+      "total": 87.68
+    },
+    {
+      "description": "Translation Service",
+      "quantity": 1,
+      "unit_price": 1898.3,
+      "total": 1898.3
+    }
+  ],
+  "subtotal": 2573.98,
+  "tax": 180.18,
+  "total": 2754.16
+}
+
+===== SAMPLE 3 (input) =====
+Horizon Trading Ltd
+18 Park Drive, Casablanca
+
+Inv No.: INV/04/2024/5390
+Issued: 23/04/2024
+Customer: Tangier Imports SA
+
+Translation Service - 1 x 8.09 MAD = 8.09 MAD
+Office Chair - 2 x 1,652.00 MAD = 3,304.00 MAD
+
+Sub-total: 3,312.09 MAD
+Tax (10%): 331.21 MAD
+Amount Due: 3,643.30 MAD
+
+===== SAMPLE 3 (target) =====
+{
+  "invoice_number": "INV/04/2024/5390",
+  "vendor": "Horizon Trading Ltd",
+  "invoice_date": "2024-04-23",
+  "due_date": null,
+  "currency": "MAD",
+  "items": [
+    {
+      "description": "Translation Service",
+      "quantity": 1,
+      "unit_price": 8.09,
+      "total": 8.09
+    },
+    {
+      "description": "Office Chair",
+      "quantity": 2,
+      "unit_price": 1652.0,
+      "total": 3304.0
+    }
+  ],
+  "subtotal": 3312.09,
+  "tax": 331.21,
+  "total": 3643.3
+}
+
+===== SAMPLE 4 (input) =====
+HORIZON CLOUD INC.
+7 Boulevard Zerktouni, Austin
+
+Invoice Number INV-2025-3848
+Date 03/07/2025
+
+Item                   Quantity             Price        Amount
+Monthly Subscription            1       $1,095.49       $1,095.49
+Office Chair                     3      $2,299.34    $6,898.02
+
+Subtotal $7,993.51
+VAT (7%) $559.55
+Amount Due $8,553.06
+
+===== SAMPLE 4 (target) =====
+{
+  "invoice_number": "INV-2025-3848",
+  "vendor": "Horizon Cloud Inc.",
+  "invoice_date": "2025-07-03",
+  "due_date": null,
+  "currency": "USD",
+  "items": [
+    {
+      "description": "Monthly Subscription",
+      "quantity": 1,
+      "unit_price": 1095.49,
+      "total": 1095.49
+    },
+    {
+      "description": "Office Chair",
+      "quantity": 3,
+      "unit_price": 2299.34,
+      "total": 6898.02
+    }
+  ],
+  "subtotal": 7993.51,
+  "tax": 559.55,
+  "total": 8553.06
+}
+
+===== SAMPLE 5 (input) =====
+Vertex Digital SA
+221 Market Avenue, London
+FACTURE
+
+Date : 12.04.2025
+Destinataire : Leila Haddad
+Date d'échéance : 27.05.2025
+Facture N° : AB-03290
+
+Description                 Quantité            Prix         Montant
+Formation Python                2        406,49 €        812,98 €
+Création de site web            2      2.816,50 €      5 633,00 €
+Licence logicielle              3         48,89 €        146,67 €
+
+Total HT : 6.592,65 €
+Taxe : 0,00 €
+Net à payer : 6 592,65 €
+
+===== SAMPLE 5 (target) =====
+{
+  "invoice_number": "AB-03290",
+  "vendor": "Vertex Digital SA",
+  "invoice_date": "2025-04-12",
+  "due_date": "2025-05-27",
+  "currency": "EUR",
+  "items": [
+    {
+      "description": "Formation Python",
+      "quantity": 2,
+      "unit_price": 406.49,
+      "total": 812.98
+    },
+    {
+      "description": "Création de site web",
+      "quantity": 2,
+      "unit_price": 2816.5,
+      "total": 5633.0
+    },
+    {
+      "description": "Licence logicielle",
+      "quantity": 3,
+      "unit_price": 48.89,
+      "total": 146.67
+    }
+  ],
+  "subtotal": 6592.65,
+  "tax": 0.0,
+  "total": 6592.65
+}
+

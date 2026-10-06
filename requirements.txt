@@ -1,0 +1,16 @@
+# Core (data pipeline, validation, evaluation, tests)
+pydantic>=2.5
+pytest>=8.0
+
+# App + OCR
+streamlit>=1.35
+pillow>=10.0
+pymupdf>=1.24          # PDF text extraction / page rendering
+pytesseract>=0.3.10    # needs the tesseract binary: apt install tesseract-ocr tesseract-ocr-fra
+# paddleocr>=2.7       # optional, better OCR (also needs paddlepaddle)
+
+# Inference with the fine-tuned model
+torch>=2.2
+transformers>=4.44
+peft>=0.12
+accelerate>=0.33

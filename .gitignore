@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+
+# Model weights / checkpoints (keep only the models/README.md)
+models/*
+!models/README.md
+*.safetensors
+*.bin
+*.pt
+
+# Large generated data (regenerate with scripts/generate_dataset.py)
+data/*.json
+data/*.jsonl
+!data/samples.txt
+# Logs, macOS and Anaconda leftovers
+*.log
+.DS_Store
+anaconda_projects/
+results/*/eval_results.json
+results/eval_results.json
+results/eval_table.md
+results/eval_results.json
+results/eval_table.md
